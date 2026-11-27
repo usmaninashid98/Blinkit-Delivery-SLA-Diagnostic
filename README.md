@@ -4,7 +4,9 @@
 
 The Blinkit Delivery SLA Diagnostic project focuses on analyzing delivery performance and identifying factors affecting delivery SLA compliance.
 
-The project uses SQL, Python, SQLite, Excel, and Tableau to examine delivery performance, analyze operational patterns, and generate actionable insights.
+The project uses SQL, Python, SQLite, Microsoft Excel, and Tableau Public to examine delivery performance, analyze operational patterns, and generate actionable insights.
+
+The analysis is based on a simulated dataset covering Mumbai and Bengaluru from 5 October 2026 to 1 November 2026.
 
 ## Project Objectives
 
@@ -12,7 +14,7 @@ The project uses SQL, Python, SQLite, Excel, and Tableau to examine delivery per
 - Evaluate delivery performance across different segments.
 - Identify delivery time patterns and operational bottlenecks.
 - Summarize key performance indicators (KPIs).
-- Present findings through an interactive Tableau dashboard.
+- Present findings through a Tableau dashboard.
 
 ## Tools & Technologies
 
@@ -28,10 +30,33 @@ The project uses SQL, Python, SQLite, Excel, and Tableau to examine delivery per
 ```text
 Blinkit-Delivery-SLA-Diagnostic/
 │
+├── dashboards/
+│   └── tableau/
+│       └── Blinkit_Delivery_SLA_Diagnostic.twbx
+│
 ├── data/
 │   ├── database/
-│   ├── processed/
-│   └── exports/
+│   │   └── blinkit_sla.db
+│   │
+│   ├── exports/
+│   │   └── blinkit_sla_analysis.xlsx
+│   │
+│   └── processed/
+│       ├── category_compliance.csv
+│       ├── cluster_band_cells.csv
+│       ├── daily_compliance.csv
+│       ├── focus_delivery_minutes.csv
+│       └── kpi_summary.csv
+│
+├── docs/
+│   ├── ai_log.md
+│   ├── dashboard_spec.md
+│   ├── one_page_report.md
+│   └── requirements.md
+│
+├── python/
+│   ├── export_data.py
+│   └── generate_data.py
 │
 ├── sql/
 │   ├── 01_foundations.sql
@@ -39,19 +64,6 @@ Blinkit-Delivery-SLA-Diagnostic/
 │   ├── 03_segments.sql
 │   ├── 04_trend.sql
 │   └── verify.sql
-│
-├── python/
-│   ├── generate_data.py
-│   └── export_data.py
-│
-├── dashboards/
-│   └── tableau/
-│
-├── docs/
-│   ├── ai_log.md
-│   ├── dashboard_spec.md
-│   ├── one_page_report.md
-│   └── requirements.md
 │
 └── README.md
 ```
@@ -66,13 +78,32 @@ Blinkit-Delivery-SLA-Diagnostic/
 
 ## Tableau Dashboard
 
-The packaged Tableau workbook is available in:
+The packaged Tableau workbook is available at:
 
-`dashboards/tableau/`
+`dashboards/tableau/Blinkit_Delivery_SLA_Diagnostic.twbx`
+
+The dashboard presents:
+
+- Daily SLA compliance trends.
+- Cluster and time-band performance.
+- Worst-performing delivery segments.
+- Category-level compliance.
+- Overall KPI summaries.
+
+## Data Files
+
+- **SQLite Database:** `data/database/blinkit_sla.db`
+- **Processed CSV Files:** `data/processed/`
+- **Excel Analysis Workbook:** `data/exports/blinkit_sla_analysis.xlsx`
 
 ## Documentation
 
-Additional project documentation is available in the `docs/` directory.
+Additional project documentation is available in the `docs/` directory:
+
+- `requirements.md` – Project requirements and analytical definitions.
+- `dashboard_spec.md` – Tableau dashboard specifications.
+- `one_page_report.md` – Key findings and recommendations.
+- `ai_log.md` – AI assistance and validation record.
 
 ## Important Note
 
@@ -81,5 +112,4 @@ This project uses a simulated dataset for analytical and educational purposes. I
 ## Author
 
 **Nashid**
-
 GitHub: [usmaninashid98](https://github.com/usmaninashid98)
